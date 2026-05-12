@@ -5,7 +5,7 @@
  * Canvas 룰렛은 foods.length 값을 기준으로 자동으로 칸 개수를 계산한다.
  */
 export const foods = [
-  {
+  /*{
     name: "피자",
     image: "./images/pizza.png",
     color: "#00e5ff"
@@ -44,5 +44,15 @@ export const foods = [
     name: "스테이크",
     image: "./images/steak.png",
     color: "#1500ff"
-  }
+  }*/
+   {
+    name: "햄버거",
+    image: "./images/pasta.png",
+    color: "#ff9800"
+  },
+  {
+    name: "마라탕",
+    image: "./images/fries.png",
+    color: "#ff0000"
+  },
 ];
