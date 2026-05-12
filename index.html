@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>음식 룰렛</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- 상단 헤더 -->
+  <header class="app-header">
+    <div class="menu-icon">☰</div>
+    <h1>Food</h1>
+  </header>
+
+  <!-- 메인 화면 -->
+  <main class="app-container">
+
+    <h2 class="main-title">오늘 뭐 먹지?</h2>
+
+    <!-- 룰렛 영역 -->
+    <section class="roulette-section">
+
+      <!-- 고정 화살표 -->
+      <div class="pointer"></div>
+
+      <!-- Canvas 룰렛판 -->
+      <canvas id="rouletteCanvas" width="600" height="600"></canvas>
+
+      <!-- 가운데 SPIN 버튼 -->
+      <button id="spinCenterButton" class="center-spin-button">
+        SPIN
+      </button>
+    </section>
+
+    <!-- 하단 돌리기 버튼 -->
+    <button id="spinButton" class="main-spin-button">
+      룰렛 돌리기!
+    </button>
+
+    <!-- 결과 표시 영역 -->
+    <section class="result-box">
+      <p class="result-label">오늘의 음식?</p>
+      <p id="resultText" class="result-text">기대해 주세요!</p>
+      <img id="resultImage" class="result-image" alt="선택된 음식 이미지" />
+    </section>
+
+  </main>
+
+  <!-- 효과음 -->
+  <audio id="spinSound" src="./sounds/spin.mp3" preload="auto"></audio>
+  <audio id="winSound" src="./sounds/win.mp3" preload="auto"></audio>
+
+  <!-- JavaScript -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

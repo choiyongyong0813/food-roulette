@@ -1,0 +1,192 @@
+/* 전체 기본 설정 */
+* {
+  box-sizing: border-box;
+}   
+
+body {
+  margin: 0;
+  background: #263238;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* 상단 바 */
+.app-header {
+  height: 70px;
+  background: #00cfe8;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 24px;
+}
+
+.menu-icon {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* 전체 컨테이너 */
+.app-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+/* 메인 제목 */
+.main-title {
+  font-size: 42px;
+  margin-bottom: 24px;
+  color: #ffffff;
+  text-shadow: 3px 3px 0 #111;
+}
+
+/* 룰렛 전체 영역 */
+.roulette-section {
+  position: relative;
+  width: min(90vw, 600px);
+  height: min(90vw, 600px);
+  margin: 0 auto;
+}
+
+/* Canvas 크기 */
+#rouletteCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 상단 화살표 */
+.pointer {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  width: 0;
+  height: 0;
+
+  border-left: 38px solid transparent;
+  border-right: 38px solid transparent;
+  border-top: 70px solid red;
+
+  filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* 가운데 SPIN 버튼 */
+.center-spin-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 130px;
+  height: 130px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+  border: 5px solid #111;
+
+  background: white;
+  color: #111;
+
+  font-size: 32px;
+  font-weight: bold;
+
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* 하단 메인 버튼 */
+.main-spin-button {
+  margin-top: 28px;
+  width: min(90vw, 440px);
+  height: 72px;
+
+  border: 5px solid #111;
+  border-radius: 40px;
+
+  background: #ffd600;
+  color: #111;
+
+  font-size: 32px;
+  font-weight: bold;
+
+  cursor: pointer;
+  box-shadow: 0 6px 0 #111;
+}
+
+.main-spin-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #111;
+}
+
+/* 버튼 비활성화 */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 결과 박스 */
+.result-box {
+  margin: 28px auto 0;
+  padding: 20px;
+
+  width: min(90vw, 460px);
+
+  border: 2px dashed #ccc;
+  border-radius: 24px;
+}
+
+.result-label {
+  margin: 0;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.result-text {
+  margin: 8px 0;
+  font-size: 34px;
+  font-weight: bold;
+  color: #ffd600;
+}
+
+.result-image {
+  display: none;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-top: 12px;
+}
+
+/* 모바일 대응 */
+@media (max-width: 480px) {
+  .app-header {
+    height: 60px;
+  }
+
+  .app-header h1 {
+    font-size: 28px;
+  }
+
+  .main-title {
+    font-size: 34px;
+  }
+
+  .center-spin-button {
+    width: 100px;
+    height: 100px;
+    font-size: 26px;
+  }
+
+  .main-spin-button {
+    height: 64px;
+    font-size: 26px;
+  }
+}
