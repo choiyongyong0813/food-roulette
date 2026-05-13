@@ -182,18 +182,17 @@ button:disabled {
 .result-image {
   display: none;
 
-  width: min(90vw, 420px);
-  height: 280px;
+  width: min(84vw, 340px);
+  height: 160px;
 
   object-fit: cover;
   object-position: center;
 
-  margin-top: 16px;
+  margin: 10px auto 0;
 
   border-radius: 18px;
   border: 4px solid #111;
 }
-
 /* 모바일 대응 */
 @media (max-width: 480px) {
   .app-header {
@@ -220,10 +219,10 @@ button:disabled {
     margin: 10px 0 10px;
   }
 
-  .roulette-section {
-    width: min(70vw, 280px);
-    height: min(70vw, 280px);
-  }
+.roulette-section {
+  width: min(62vw, 250px);
+  height: min(62vw, 250px);
+}
 
   .pointer {
     top: -6px;
@@ -232,22 +231,22 @@ button:disabled {
     border-top-width: 44px;
   }
 
-  .center-spin-button {
-    width: 78px;
-    height: 78px;
-    font-size: 22px;
-  }
+.center-spin-button {
+  width: 78px;
+  height: 78px;
+  font-size: 22px;
+}
 
-  .main-spin-button {
-    margin-top: 14px;
-    height: 56px;
-    font-size: 24px;
-  }
+.main-spin-button {
+  margin-top: 14px;
+  height: 56px;
+  font-size: 24px;
+}
 
-  .result-box {
-    margin-top: 14px;
-    padding: 12px;
-  }
+.result-box {
+  margin-top: 12px;
+  padding: 10px;
+}
 
   .result-label {
     font-size: 20px;
@@ -258,9 +257,9 @@ button:disabled {
     margin: 6px 0;
   }
 
-  .result-image {
-    width: min(86vw, 340px);
-    height: 180px;
-    margin-top: 10px;
-  }
+.result-image {
+  width: min(84vw, 330px);
+  height: 150px;
+  margin: 8px auto 0;
+}
 }

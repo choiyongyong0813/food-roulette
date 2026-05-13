@@ -90,7 +90,7 @@ showResult(food) {
   this.resultText.textContent = "이 음식은 뭘까요?";
 
   this.resultImage.src = food.image;
-  this.resultImage.style.display = "inline-block";
+  this.resultImage.style.display = "block";
 }
   /**
    * 버튼 활성/비활성 처리
