@@ -65,15 +65,21 @@ export class RouletteRenderer {
     ctx.rotate(rotationAngle);
     ctx.translate(-this.centerX, -this.centerY);
 
-    for (let i = 0; i < this.foods.length; i++) {
-      const food = this.foods[i];
+const wheelColors = ["#ff3d3d", "#ffd600", "#00cfe8", "#7cff6b"];
 
-      const startAngle = i * sliceAngle - Math.PI / 2;
-      const endAngle = startAngle + sliceAngle;
+for (let i = 0; i < this.foods.length; i++) {
+  const food = this.foods[i];
 
-      this.drawSlice(startAngle, endAngle, food.color);
-      this.drawFoodContent(startAngle, endAngle, food);
-    }
+  const startAngle = i * sliceAngle - Math.PI / 2;
+  const endAngle = startAngle + sliceAngle;
+
+  // 음식 고유 색상이 아니라 단순 반복 색상 사용
+  const color = wheelColors[i % wheelColors.length];
+
+  this.drawSlice(startAngle, endAngle, color);
+
+  // 음식 이름/이미지 표시 안 함
+}
 
     ctx.restore();
 

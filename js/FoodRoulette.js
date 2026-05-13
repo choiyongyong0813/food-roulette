@@ -77,22 +77,21 @@ export class FoodRoulette {
   /**
    * 결과 초기화
    */
-  clearResult() {
-    this.resultText.textContent = "돌아가는 중...";
-    this.resultImage.style.display = "none";
-    this.resultImage.src = "";
-  }
+clearResult() {
+  this.resultText.textContent = "돌아가는 중...";
+  this.resultImage.style.display = "none";
+  this.resultImage.src = "";
+}
 
   /**
    * 결과 출력
    */
-  showResult(food) {
-    this.resultText.textContent = `오늘은 ${food.name}!`;
+showResult(food) {
+  this.resultText.textContent = "이 음식은 뭘까요?";
 
-    this.resultImage.src = food.image;
-    this.resultImage.style.display = "inline-block";
-  }
-
+  this.resultImage.src = food.image;
+  this.resultImage.style.display = "inline-block";
+}
   /**
    * 버튼 활성/비활성 처리
    */

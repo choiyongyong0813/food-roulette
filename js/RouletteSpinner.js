@@ -1,10 +1,9 @@
 /**
  * 룰렛 회전 담당 클래스
  *
- * 역할:
- * - 랜덤 음식 선택
- * - 목표 각도 계산
- * - 감속 애니메이션 처리
+ * 핵심:
+ * - 룰렛이 멈추는 위치와 음식 결과를 분리한다.
+ * - 그래서 사용자가 룰렛 색상/위치로 음식을 유추할 수 없다.
  */
 export class RouletteSpinner {
   constructor(foods, renderer) {
@@ -18,33 +17,34 @@ export class RouletteSpinner {
   /**
    * 룰렛을 회전시킨다.
    *
-   * 반환값:
-   * - 최종 선택된 음식 객체
+   * onComplete:
+   * - 회전이 끝난 뒤 선택된 음식 객체를 넘겨준다.
    */
   spin(onComplete) {
     if (this.isSpinning) return;
 
     this.isSpinning = true;
 
-    const selectedIndex = Math.floor(Math.random() * this.foods.length);
-    const selectedFood = this.foods[selectedIndex];
-
-    const sliceAngle = (Math.PI * 2) / this.foods.length;
+    /**
+     * 1. 음식 결과는 랜덤으로 따로 뽑는다.
+     * 이 값은 룰렛 각도와 관계없다.
+     */
+    const selectedFoodIndex = Math.floor(Math.random() * this.foods.length);
+    const selectedFood = this.foods[selectedFoodIndex];
 
     /**
-     * 화살표가 위쪽에 고정되어 있으므로
-     * 선택된 칸의 중앙이 위쪽 화살표에 오도록 목표 각도를 계산한다.
+     * 2. 룰렛이 멈출 위치도 랜덤으로 따로 뽑는다.
+     * 이 값도 음식 결과와 관계없다.
      */
-    const selectedMiddleAngle =
-      selectedIndex * sliceAngle + sliceAngle / 2;
+    const randomStopAngle = Math.random() * Math.PI * 2;
 
+    /**
+     * 3. 여러 바퀴 돌린 뒤 랜덤 위치에서 멈추게 한다.
+     */
     const fullRotations = Math.PI * 2 * 6;
 
-    const targetRotation =
-      fullRotations - selectedMiddleAngle;
-
     const startRotation = this.currentRotation;
-    const finalRotation = startRotation + targetRotation;
+    const finalRotation = startRotation + fullRotations + randomStopAngle;
 
     const duration = 4000;
     const startTime = performance.now();
@@ -65,7 +65,6 @@ export class RouletteSpinner {
       } else {
         this.isSpinning = false;
 
-        // 각도가 너무 커지는 것을 방지하기 위해 0~2π 범위로 정리
         this.currentRotation = this.currentRotation % (Math.PI * 2);
 
         if (onComplete) {
@@ -78,10 +77,7 @@ export class RouletteSpinner {
   }
 
   /**
-   * 감속 효과 함수
-   *
-   * 처음에는 빠르게 돌고,
-   * 끝으로 갈수록 천천히 멈추는 느낌을 만든다.
+   * 감속 효과
    */
   easeOutCubic(x) {
     return 1 - Math.pow(1 - x, 3);
