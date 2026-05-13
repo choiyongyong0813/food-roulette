@@ -197,70 +197,70 @@ button:disabled {
 /* 모바일 대응 */
 @media (max-width: 480px) {
   .app-header {
-    height: 60px;
+    height: 56px;
     padding: 0 16px;
   }
 
   .app-header h1 {
-    font-size: 26px;
-  }
-
-  .menu-icon {
-    font-size: 28px;
-  }
-
-  .app-container {
-    min-height: calc(100vh - 60px);
-    padding: 8px 12px 20px;
-  }
-
-  .main-title {
-    font-size: 32px;
-    margin-bottom: 18px;
-  }
-
-  .roulette-section {
-    width: min(78vw, 340px);
-    height: min(78vw, 340px);
-  }
-
-  .pointer {
-    top: -8px;
-
-    border-left-width: 28px;
-    border-right-width: 28px;
-    border-top-width: 52px;
-  }
-
-  .center-spin-button {
-    width: 96px;
-    height: 96px;
-
     font-size: 24px;
   }
 
-  .main-spin-button {
-    margin-top: 20px;
-
-    height: 64px;
+  .menu-icon {
     font-size: 26px;
   }
 
+  .app-container {
+    min-height: calc(100vh - 56px);
+    padding: 6px 12px 12px;
+    justify-content: flex-start;
+  }
+
+  .main-title {
+    font-size: 30px;
+    margin: 10px 0 10px;
+  }
+
+  .roulette-section {
+    width: min(70vw, 280px);
+    height: min(70vw, 280px);
+  }
+
+  .pointer {
+    top: -6px;
+    border-left-width: 24px;
+    border-right-width: 24px;
+    border-top-width: 44px;
+  }
+
+  .center-spin-button {
+    width: 78px;
+    height: 78px;
+    font-size: 22px;
+  }
+
+  .main-spin-button {
+    margin-top: 14px;
+    height: 56px;
+    font-size: 24px;
+  }
+
   .result-box {
-    margin-top: 16px;
-    padding: 14px;
+    margin-top: 14px;
+    padding: 12px;
   }
 
   .result-label {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .result-text {
     font-size: 28px;
+    margin: 6px 0;
   }
 
   .result-image {
-    width: min(88vw, 360px);
-    height: 220px;
+    width: min(86vw, 340px);
+    height: 180px;
+    margin-top: 10px;
   }
 }
