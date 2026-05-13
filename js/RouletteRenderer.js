@@ -108,17 +108,17 @@ export class RouletteRenderer {
     const middleAngle = (startAngle + endAngle) / 2;
 
     const textRadius = this.radius * 0.65;
-    const imageRadius = this.radius * 0.47;
+   // const imageRadius = this.radius * 0.47;
 
     const textX = this.centerX + Math.cos(middleAngle) * textRadius;
     const textY = this.centerY + Math.sin(middleAngle) * textRadius;
 
-    const imageX = this.centerX + Math.cos(middleAngle) * imageRadius;
-    const imageY = this.centerY + Math.sin(middleAngle) * imageRadius;
+  //  const imageX = this.centerX + Math.cos(middleAngle) * imageRadius;
+  //  const imageY = this.centerY + Math.sin(middleAngle) * imageRadius;
 
-    const img = this.loadedImages.get(food.name);
+   // const img = this.loadedImages.get(food.name);
 
-    if (img) {
+  /*  if (img) {
       const imageSize = 70;
       ctx.drawImage(
         img,
@@ -127,7 +127,7 @@ export class RouletteRenderer {
         imageSize,
         imageSize
       );
-    }
+    }*/
 
     // 텍스트 외곽선
     ctx.font = "bold 28px Arial";

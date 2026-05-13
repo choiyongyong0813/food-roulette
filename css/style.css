@@ -9,8 +9,9 @@ body {
   background: #263238;
   font-family: Arial, sans-serif;
   color: white;
-
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /*overflow: hidden;*/
 
 }
 
@@ -36,13 +37,13 @@ body {
 
 /* 전체 컨테이너 */
 .app-container {
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 
   max-width: 720px;
 
   margin: 0 auto;
 
-  padding: 10px 16px;
+  padding: 10px 16px 24px;
 
   display: flex;
   flex-direction: column;
