@@ -47,12 +47,12 @@ export const foods = [
   }*/
    {
     name: "햄버거",
-   image: "../images/burger.jpg",
+   image: "../images/burger1.jpg",
     color: "#ff9800"
   },
   {
     name: "마라탕",
-    image: "../images/mara.jpg",
+    image: "../images/mara1.jpg",
     color: "#ff0000"
   },
 ];
