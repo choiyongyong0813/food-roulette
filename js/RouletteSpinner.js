@@ -71,7 +71,7 @@ export class RouletteSpinner {
           onComplete(selectedFood);
         }
       }
-    };
+    }; 
 
     requestAnimationFrame(animate);
   }

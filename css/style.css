@@ -1,26 +1,26 @@
 /* 전체 기본 설정 */
 * {
   box-sizing: border-box;
-}   
-
+}
 
 body {
   margin: 0;
   background: #263238;
   font-family: Arial, sans-serif;
   color: white;
+
   overflow-x: hidden;
   overflow-y: auto;
-  /*overflow: hidden;*/
-
 }
 
 /* 상단 바 */
 .app-header {
   height: 70px;
   background: #00cfe8;
+
   display: flex;
   align-items: center;
+
   padding: 0 24px;
   gap: 24px;
 }
@@ -40,7 +40,6 @@ body {
   min-height: calc(100vh - 70px);
 
   max-width: 720px;
-
   margin: 0 auto;
 
   padding: 10px 16px 24px;
@@ -56,7 +55,8 @@ body {
 /* 메인 제목 */
 .main-title {
   font-size: 42px;
-  margin-bottom: 24px;
+  margin: 0 0 24px;
+
   color: #ffffff;
   text-shadow: 3px 3px 0 #111;
 }
@@ -64,8 +64,10 @@ body {
 /* 룰렛 전체 영역 */
 .roulette-section {
   position: relative;
+
   width: min(75vw, 420px);
   height: min(75vw, 420px);
+
   margin: 0 auto;
 }
 
@@ -82,6 +84,7 @@ body {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
+
   z-index: 10;
 
   width: 0;
@@ -94,7 +97,7 @@ body {
   filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.5));
 }
 
-/* 가운데 SPIN 버튼 */
+/* 가운데 돌리기 버튼 */
 .center-spin-button {
   position: absolute;
   top: 50%;
@@ -108,7 +111,7 @@ body {
   border-radius: 50%;
   border: 5px solid #111;
 
-  background: white;
+  background: #ffeb3b;
   color: #111;
 
   font-size: 32px;
@@ -121,6 +124,7 @@ body {
 /* 하단 메인 버튼 */
 .main-spin-button {
   margin-top: 28px;
+
   width: min(90vw, 440px);
   height: 72px;
 
@@ -153,29 +157,33 @@ button:disabled {
   margin: 18px auto 0;
   padding: 18px;
 
-  width: min(90vw, 460px);
+  width: min(92vw, 480px);
 
   border: 2px dashed #ccc;
   border-radius: 24px;
 }
+
 .result-label {
   margin: 0;
+
   font-size: 24px;
   color: #ffffff;
 }
 
 .result-text {
   margin: 8px 0;
+
   font-size: 34px;
   font-weight: bold;
   color: #ffd600;
 }
 
+/* 결과 이미지 */
 .result-image {
   display: none;
 
-  width: min(80vw, 320px);
-  height: 220px;
+  width: min(90vw, 420px);
+  height: 280px;
 
   object-fit: cover;
   object-position: center;
@@ -190,24 +198,69 @@ button:disabled {
 @media (max-width: 480px) {
   .app-header {
     height: 60px;
+    padding: 0 16px;
   }
 
   .app-header h1 {
+    font-size: 26px;
+  }
+
+  .menu-icon {
     font-size: 28px;
   }
 
+  .app-container {
+    min-height: calc(100vh - 60px);
+    padding: 8px 12px 20px;
+  }
+
   .main-title {
-    font-size: 34px;
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .roulette-section {
+    width: min(78vw, 340px);
+    height: min(78vw, 340px);
+  }
+
+  .pointer {
+    top: -8px;
+
+    border-left-width: 28px;
+    border-right-width: 28px;
+    border-top-width: 52px;
   }
 
   .center-spin-button {
-    width: 100px;
-    height: 100px;
-    font-size: 26px;
+    width: 96px;
+    height: 96px;
+
+    font-size: 24px;
   }
 
   .main-spin-button {
+    margin-top: 20px;
+
     height: 64px;
     font-size: 26px;
+  }
+
+  .result-box {
+    margin-top: 16px;
+    padding: 14px;
+  }
+
+  .result-label {
+    font-size: 22px;
+  }
+
+  .result-text {
+    font-size: 28px;
+  }
+
+  .result-image {
+    width: min(88vw, 360px);
+    height: 220px;
   }
 }
